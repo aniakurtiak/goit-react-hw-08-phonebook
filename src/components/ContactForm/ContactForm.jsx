@@ -7,6 +7,11 @@ import {
   Button,
 } from './ContactForm.styled';
 import * as Yup from 'yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'redux/contactsSlice';
+import { getContacts } from 'redux/selectors';
+import { Notify } from 'notiflix';
+import { nanoid } from 'nanoid';
 
 const PhonebookSchema = Yup.object().shape({
   name: Yup.string()
@@ -19,7 +24,18 @@ const PhonebookSchema = Yup.object().shape({
     .required('Required'),
 });
 
-export const ContactForm = ({ onAdd }) => {
+export const ContactForm = () => {
+  const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
+  const handleSubmit = ({ name, number }) => {
+    if (contacts.find(contact => contact.number === number)) {
+      Notify.failure(`${number} is alredy in contacts`);
+      return;
+    }
+    const newUser = { id: nanoid(), name, number };
+    dispatch(addContact(newUser));
+  };
+
   return (
     <div>
       <h2>Phonebook</h2>
@@ -30,7 +46,7 @@ export const ContactForm = ({ onAdd }) => {
         }}
         validationSchema={PhonebookSchema}
         onSubmit={(values, actions) => {
-          onAdd(values);
+          handleSubmit(values);
           actions.resetForm();
         }}
       >
