@@ -8,9 +8,7 @@ import { getFilter } from 'redux/fIlterSlice';
 
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
-  console.log(contacts);
   const filter = useSelector(getFilter);
-  console.log(filter);
   const dispatch = useDispatch();
   const onDelete = id => dispatch(deleteContact(id));
   const visibleItems = contacts.filter(contact =>
@@ -25,7 +23,7 @@ export const ContactList = () => {
           <li key={item.id}>
             <ItemsWrap>
               {item.name}: {item.number}
-              <Button onClick={onDelete}>Delete</Button>
+              <Button onClick={() => onDelete(item.id)}>Delete</Button>
             </ItemsWrap>
           </li>
         ))}
