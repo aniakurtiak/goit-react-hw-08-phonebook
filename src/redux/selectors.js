@@ -1,5 +1,4 @@
-export const getContacts = state => state.contacts;
+// export const getContacts = state => state.contacts;
+// console.log(getContacts)
+// export const getFilter = state => state.filter;
 
-export const getFilter = state => state.filter;
-
-// export const getContactsArray = state => state.contacts._persist.rehydrated ? state.contacts : [];

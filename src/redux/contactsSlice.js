@@ -13,12 +13,12 @@ const contactsSlice = createSlice({
             reducer(state, action) {
                 state.push(action.payload);
             },
-            prepare(name, number) {
+            prepare({name, number}) {
                 return {
                     payload: {
+                        id: nanoid(),
                         name,
                         number,
-                        id: nanoid(),
                     },
                 };
             },
@@ -36,7 +36,9 @@ const persistConfig = {
 }
 
 
-export const persistedContact = persistReducer(persistConfig, contactsSlice.reducer)
+export const persistedContactReducer = persistReducer(persistConfig, contactsSlice.reducer)
 export const { addContact, deleteContact } = contactsSlice.actions;
-
-// export const contactsReducer = contactsSlice.reducer;
+ 
+// Selector
+export const getContacts = state => state.contacts;
+console.log(getContacts)
