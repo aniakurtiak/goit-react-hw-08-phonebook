@@ -1,6 +1,13 @@
 import {createSlice } from "@reduxjs/toolkit";
 import { addContact, deleteContact, fetchContacts } from "./operations";
 
+const handlePending = state => {
+    state.isLoading = true;
+}
+const handleRejected = (state, action) => {
+    state.isLoading = false;
+    state.error = action.payload;
+}
 
 export const contactsSlice = createSlice({
     name: 'contacts',
@@ -10,43 +17,30 @@ export const contactsSlice = createSlice({
         error: null,
     },
     extraReducers: {
-        [fetchContacts.pending](state) {
-            state.isLoading = true;
-        },
+        [fetchContacts.pending]: handlePending,
         [fetchContacts.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
             state.items = action.payload;
         },
-        [fetchContacts.rejected](state, action) {
-            state.isLoading = false;
-            state.error = action.payload;
-        },
-        [addContact.pending](state) {
-            state.isLoading = true;
-        },
+        [fetchContacts.rejected]: handleRejected,
+        
+        [addContact.pending]:handlePending,
         [addContact.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
             state.items.push(action.payload);
         },
-        [addContact.rejected](state, action) {
-            state.isLoading = false;
-            state.error = action.payload;
-        },
-        [deleteContact.pending](state) {
-            state.isLoading = true
-        },
+        [addContact.rejected]: handleRejected,
+        
+        [deleteContact.pending]:handlePending,
         [deleteContact.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
             const index = state.find(contact => contact.id === action.payload);
             state.splice(index, 1);
         },
-        [deleteContact.rejected](state, action) {
-            state.isLoading = false;
-            state.error = action.payload;
-        }, 
+        [deleteContact.rejected]:handleRejected,
     },
 })
 
