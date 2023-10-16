@@ -38,7 +38,7 @@ export const ContactForm = () => {
 
   return (
     <div>
-      <h2>Phonebook</h2>
+      <h2>Phonebook 3.0</h2>
       <Formik
         initialValues={{
           name: '',
