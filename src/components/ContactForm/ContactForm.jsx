@@ -9,7 +9,7 @@ import {
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
 
 const PhonebookSchema = Yup.object().shape({
@@ -24,7 +24,7 @@ const PhonebookSchema = Yup.object().shape({
 });
 
 export const ContactForm = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   const handleSubmit = ({ name, number }) => {
     if (contacts.find(contact => contact.number === number)) {
