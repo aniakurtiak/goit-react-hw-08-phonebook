@@ -1,16 +1,17 @@
-import { Formik } from 'formik';
-import {
-  StyledForm,
-  Label,
-  StyledField,
-  ErrorMsg,
-  Button,
-} from './ContactForm.styled';
+import { ErrorMessage, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/contacts/operations';
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Text,
+} from '@chakra-ui/react';
 
 const PhonebookSchema = Yup.object().shape({
   name: Yup.string()
@@ -37,7 +38,12 @@ export const ContactForm = () => {
 
   return (
     <div>
-      <h2>Phonebook</h2>
+      <Box pl={60} pt={10}>
+        <Text fontFamily="heading" fontSize={28} color="rgb(74, 59, 4)">
+          Add your new contact
+        </Text>
+      </Box>
+
       <Formik
         initialValues={{
           name: '',
@@ -49,19 +55,41 @@ export const ContactForm = () => {
           actions.resetForm();
         }}
       >
-        <StyledForm>
-          <Label>
-            Name
-            <StyledField name="name" type="text"></StyledField>
-            <ErrorMsg name="name" component="div" />
-          </Label>
-          <Label>
-            Number
-            <StyledField name="number" type="tel"></StyledField>
-            <ErrorMsg name="number" component="div" />
-          </Label>
-          <Button type="submit">Add contact</Button>
-        </StyledForm>
+        <Box pl={60} mt={20}>
+          <Form>
+            <FormControl>
+              <FormLabel color="rgb(74, 59, 4)">Username</FormLabel>
+              <Input
+                type="text"
+                name="name"
+                htmlSize={35}
+                width="auto"
+                variant="flushed"
+                focusBorderColor="rgb(74, 59, 4)"
+                color="rgb(194, 152, 0)"
+                fontSize={18}
+              />
+              <ErrorMessage name="name" component="div" />
+            </FormControl>
+            <FormControl>
+              <FormLabel color="rgb(74, 59, 4)">Number</FormLabel>
+              <Input
+                type="tel"
+                name="number"
+                htmlSize={35}
+                width="auto"
+                variant="flushed"
+                focusBorderColor="rgb(74, 59, 4)"
+                color="rgb(194, 152, 0)"
+                fontSize={18}
+              />
+              <ErrorMessage name="name" component="div" />
+            </FormControl>
+            <Button type="submit" colorScheme="blackAlpha" variant="outline">
+              Add contact
+            </Button>
+          </Form>
+        </Box>
       </Formik>
     </div>
   );
