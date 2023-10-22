@@ -20,7 +20,11 @@ export default function Contacts() {
   return (
     <Flex className="bg-register-image" h="100vh">
       <ContactForm />
-      <Flex flexDirection="column">
+      <Flex
+        flexDirection="column"
+        pt={['100px', '100px', '120px']}
+        ml={['25px', '40px', '50px', '120px']}
+      >
         <Filter />
         {isLoading && !error && <b>Request in progress...</b>}
         <ContactList />

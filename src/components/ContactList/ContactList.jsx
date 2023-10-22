@@ -19,11 +19,21 @@ export const ContactList = () => {
   };
 
   return (
-    <Box pl={60} mt={20}>
-      <Text fontFamily="heading" fontSize={24} color="rgb(74, 59, 4)">
+    <Box mt={['20px', '20px', '30px']}>
+      <Text
+        fontFamily="heading"
+        fontSize={['20px', '22px', '24px']}
+        fontWeight={500}
+        color="rgb(74, 59, 4)"
+        mb={3}
+      >
         Contacts
       </Text>
-      <List fontFamily="heading" letterSpacing={3}>
+      <List
+        fontFamily="heading"
+        letterSpacing={2}
+        fontSize={['12px', '16px', '18px']}
+      >
         {contacts.map(item => (
           <ListItem key={item.id}>
             <Box>
@@ -34,7 +44,7 @@ export const ContactList = () => {
                 variant="ghost"
                 colorScheme="blackAlpha"
                 aria-label="Delete contact"
-                fontSize="18px"
+                fontSize={['12px', '16px', '18px']}
                 icon={<BsXLg />}
               />
             </Box>

@@ -37,9 +37,17 @@ export const ContactForm = () => {
   };
 
   return (
-    <div>
-      <Box pl={60} pt={10}>
-        <Text fontFamily="heading" fontSize={24} color="rgb(74, 59, 4)">
+    <Box
+      pl={['20px', '30px', '140px', '200px']}
+      pt={['100px', '100px', '120px']}
+    >
+      <Box>
+        <Text
+          fontFamily="heading"
+          fontSize={['20px', '22px', '24px']}
+          fontWeight={500}
+          color="rgb(74, 59, 4)"
+        >
           Add your new contact
         </Text>
       </Box>
@@ -55,20 +63,25 @@ export const ContactForm = () => {
           actions.resetForm();
         }}
       >
-        <Box pl={60} mt={10}>
+        <Box mt={10}>
           <Form>
             <FormControl>
-              <FormLabel color="rgb(74, 59, 4)">Username</FormLabel>
+              <FormLabel
+                color="rgb(74, 59, 4)"
+                fontSize={['16px', '18px', '20px']}
+              >
+                Username
+              </FormLabel>
               <Field
                 as={Input}
                 type="text"
                 name="name"
-                htmlSize={35}
                 width="auto"
                 variant="flushed"
                 focusBorderColor="rgb(74, 59, 4)"
                 color="rgb(138, 60, 0)"
-                fontSize={18}
+                fontSize={['16px', '18px', '20px']}
+                mb={5}
                 fontFamily="heading"
                 letterSpacing={3}
                 fontWeight={500}
@@ -76,29 +89,38 @@ export const ContactForm = () => {
               <ErrorMessage name="name" component="div" />
             </FormControl>
             <FormControl>
-              <FormLabel color="rgb(74, 59, 4)">Number</FormLabel>
+              <FormLabel
+                color="rgb(74, 59, 4)"
+                fontSize={['16px', '18px', '20px']}
+              >
+                Number
+              </FormLabel>
               <Field
                 as={Input}
                 type="tel"
                 name="number"
-                htmlSize={35}
                 width="auto"
                 variant="flushed"
                 focusBorderColor="rgb(74, 59, 4)"
                 color="rgb(138, 60, 0)"
-                fontSize={18}
+                fontSize={['16px', '18px', '20px']}
                 fontFamily="heading"
                 letterSpacing={3}
                 fontWeight={500}
               />
               <ErrorMessage name="number" component="div" />
             </FormControl>
-            <Button type="submit" colorScheme="blackAlpha" variant="outline">
+            <Button
+              type="submit"
+              colorScheme="blackAlpha"
+              variant="outline"
+              fontSize={['16px', '18px', '20px']}
+            >
               Add contact
             </Button>
           </Form>
         </Box>
       </Formik>
-    </div>
+    </Box>
   );
 };
