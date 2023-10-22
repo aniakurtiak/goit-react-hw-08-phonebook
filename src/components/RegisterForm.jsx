@@ -35,7 +35,7 @@ export const RegisterForm = () => {
   return (
     <Box
       pt={['120px', '120px', '150px']}
-      pl={['20px', '30px', '140px', '200px']}
+      pl={['20px', '30px', '140px', '240px', '280px']}
     >
       <form onSubmit={handleSubmit} autoComplete="off">
         <FormControl>

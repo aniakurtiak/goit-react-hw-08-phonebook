@@ -3,7 +3,7 @@ import { extendTheme } from '@chakra-ui/react';
 const theme = extendTheme({
   textStyles: {
     nav: {
-      fontSize: ['18px', '24px'],
+      fontSize: ['18px', '20px', '24px', '26px'],
       fontWeight: 'normal',
       lineHeight: '110%',
       letterSpacing: '-1%',

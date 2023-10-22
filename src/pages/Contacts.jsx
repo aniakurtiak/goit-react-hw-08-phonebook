@@ -23,7 +23,7 @@ export default function Contacts() {
       <Flex
         flexDirection="column"
         pt={['100px', '100px', '120px']}
-        ml={['25px', '40px', '50px', '120px']}
+        ml={['25px', '40px', '50px', '120px', '360px']}
       >
         <Filter />
         {isLoading && !error && <b>Request in progress...</b>}

@@ -22,7 +22,7 @@ export const ContactList = () => {
     <Box mt={['20px', '20px', '30px']}>
       <Text
         fontFamily="heading"
-        fontSize={['20px', '22px', '24px']}
+        fontSize={['20px', '22px', '24px', '30px']}
         fontWeight={500}
         color="rgb(74, 59, 4)"
         mb={3}

@@ -15,7 +15,7 @@ export const Filter = () => {
       <FormControl>
         <FormLabel
           fontFamily="heading"
-          fontSize={['20px', '22px', '24px']}
+          fontSize={['20px', '22px', '24px', '30px']}
           fontWeight={500}
           color="rgb(74, 59, 4)"
         >

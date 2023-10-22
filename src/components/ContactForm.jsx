@@ -38,13 +38,13 @@ export const ContactForm = () => {
 
   return (
     <Box
-      pl={['20px', '30px', '140px', '200px']}
+      pl={['20px', '30px', '140px', '200px', '240px']}
       pt={['100px', '100px', '120px']}
     >
       <Box>
         <Text
           fontFamily="heading"
-          fontSize={['20px', '22px', '24px']}
+          fontSize={['20px', '22px', '24px', '30px']}
           fontWeight={500}
           color="rgb(74, 59, 4)"
         >
@@ -80,7 +80,7 @@ export const ContactForm = () => {
                 variant="flushed"
                 focusBorderColor="rgb(74, 59, 4)"
                 color="rgb(138, 60, 0)"
-                fontSize={['16px', '18px', '20px']}
+                fontSize={['16px', '18px', '20px', '22px']}
                 mb={5}
                 fontFamily="heading"
                 letterSpacing={3}
@@ -103,7 +103,7 @@ export const ContactForm = () => {
                 variant="flushed"
                 focusBorderColor="rgb(74, 59, 4)"
                 color="rgb(138, 60, 0)"
-                fontSize={['16px', '18px', '20px']}
+                fontSize={['16px', '18px', '20px', '22px']}
                 fontFamily="heading"
                 letterSpacing={3}
                 fontWeight={500}
@@ -114,7 +114,7 @@ export const ContactForm = () => {
               type="submit"
               colorScheme="blackAlpha"
               variant="outline"
-              fontSize={['16px', '18px', '20px']}
+              fontSize={['16px', '18px', '20px', '22px']}
             >
               Add contact
             </Button>

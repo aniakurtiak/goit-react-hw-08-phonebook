@@ -12,7 +12,7 @@ export const AppBar = () => {
       alignItems="center"
       bg="rgb(64, 51, 2)"
       p="4"
-      px={['20px', '40px', '100px']}
+      px={['20px', '40px', '100px', '160px']}
     >
       <Box textStyle="nav" fontFamily="heading">
         <Navigation />

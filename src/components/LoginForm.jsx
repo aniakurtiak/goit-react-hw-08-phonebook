@@ -34,7 +34,7 @@ export const LoginForm = () => {
   return (
     <Box
       pt={['120px', '120px', '150px']}
-      pl={['220px', '300px', '400px', '600px']}
+      pl={['220px', '300px', '400px', '900px']}
       pr={10}
     >
       <form onSubmit={handleSubmit} autoComplete="off">
