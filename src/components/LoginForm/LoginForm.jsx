@@ -6,7 +6,6 @@ import {
   Input,
   InputGroup,
   InputLeftAddon,
-  InputRightAddon,
 } from '@chakra-ui/react';
 import React from 'react';
 import { useDispatch } from 'react-redux';
@@ -54,7 +53,7 @@ export const LoginForm = () => {
             <Input
               type={showPassword ? 'text' : 'password'}
               name="password"
-              htmlSize={23}
+              htmlSize={19}
               width="auto"
               focusBorderColor="rgb(74, 59, 4)"
               color="rgb(194, 152, 0)"
@@ -65,7 +64,7 @@ export const LoginForm = () => {
                 onClick={togglePasswordVisibility}
                 colorScheme="blackAlpha"
                 variant="ghost"
-                color="rgb(194, 152, 0)"
+                // color="rgb(194, 152, 0)"
               >
                 {showPassword ? 'Hide' : 'Show'}
               </Button>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ItemsWrap } from 'components/ContactItem/ContactItem.styled';
 import { selectVisibleItems } from 'redux/selectors';
 import { deleteContact } from 'redux/contacts/operations';
+import { Box, Text } from '@chakra-ui/react';
 
 export const ContactList = () => {
   const contacts = useSelector(selectVisibleItems);
@@ -12,8 +13,10 @@ export const ContactList = () => {
   };
 
   return (
-    <div>
-      <h2>Contacts</h2>
+    <Box pl={60} mt={20}>
+      <Text fontFamily="heading" fontSize={24} color="rgb(74, 59, 4)">
+        Contacts
+      </Text>
       <List>
         {contacts.map(item => (
           <li key={item.id}>
@@ -24,6 +27,6 @@ export const ContactList = () => {
           </li>
         ))}
       </List>
-    </div>
+    </Box>
   );
 };

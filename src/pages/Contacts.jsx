@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectIsLoading } from 'redux/selectors';
 import '../index.css';
-import { Box } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -18,11 +18,13 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <Box className="bg-register-image" h="100vh">
+    <Flex className="bg-register-image" h="100vh">
       <ContactForm />
-      <Filter />
-      {isLoading && !error && <b>Request in progress...</b>}
-      <ContactList />
-    </Box>
+      <Flex flexDirection="column">
+        <Filter />
+        {isLoading && !error && <b>Request in progress...</b>}
+        <ContactList />
+      </Flex>
+    </Flex>
   );
 }

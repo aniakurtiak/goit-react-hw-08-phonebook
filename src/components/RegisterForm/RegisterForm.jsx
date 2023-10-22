@@ -1,10 +1,23 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+} from '@chakra-ui/react';
 import React from 'react';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleSubmit = evt => {
     evt.preventDefault();
@@ -50,16 +63,27 @@ export const RegisterForm = () => {
         </FormControl>
         <FormControl>
           <FormLabel color="rgb(74, 59, 4)">Password</FormLabel>
-          <Input
-            type="password"
-            name="password"
-            htmlSize={35}
-            width="auto"
-            variant="flushed"
-            focusBorderColor="rgb(74, 59, 4)"
-            color="rgb(194, 152, 0)"
-            fontSize={18}
-          />
+          <InputGroup size="md" variant="flushed">
+            <Input
+              type={showPassword ? 'text' : 'password'}
+              name="password"
+              htmlSize={29}
+              width="auto"
+              focusBorderColor="rgb(74, 59, 4)"
+              color="rgb(194, 152, 0)"
+              fontSize={18}
+            />
+            <InputLeftAddon width="4.5rem">
+              <Button
+                onClick={togglePasswordVisibility}
+                colorScheme="blackAlpha"
+                variant="ghost"
+                // color="rgb(194, 152, 0)"
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </Button>
+            </InputLeftAddon>
+          </InputGroup>
         </FormControl>
         <Button type="submit" colorScheme="blackAlpha" variant="outline">
           Register

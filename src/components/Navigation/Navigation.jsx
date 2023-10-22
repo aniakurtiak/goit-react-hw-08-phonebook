@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { useAuth } from 'hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 

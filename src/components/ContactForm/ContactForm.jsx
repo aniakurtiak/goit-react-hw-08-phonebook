@@ -39,7 +39,7 @@ export const ContactForm = () => {
   return (
     <div>
       <Box pl={60} pt={10}>
-        <Text fontFamily="heading" fontSize={28} color="rgb(74, 59, 4)">
+        <Text fontFamily="heading" fontSize={24} color="rgb(74, 59, 4)">
           Add your new contact
         </Text>
       </Box>
@@ -55,7 +55,7 @@ export const ContactForm = () => {
           actions.resetForm();
         }}
       >
-        <Box pl={60} mt={20}>
+        <Box pl={60} mt={10}>
           <Form>
             <FormControl>
               <FormLabel color="rgb(74, 59, 4)">Username</FormLabel>
@@ -83,7 +83,7 @@ export const ContactForm = () => {
                 color="rgb(194, 152, 0)"
                 fontSize={18}
               />
-              <ErrorMessage name="name" component="div" />
+              <ErrorMessage name="number" component="div" />
             </FormControl>
             <Button type="submit" colorScheme="blackAlpha" variant="outline">
               Add contact
