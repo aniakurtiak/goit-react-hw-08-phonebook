@@ -1,7 +1,7 @@
 import { Box, Flex, Spacer } from '@chakra-ui/react';
-import { AuthNav } from 'components/AuthNav/AuthNav';
-import { Navigation } from 'components/Navigation/Navigation';
-import { UserMenu } from 'components/UserMenu/UserMenu';
+import { AuthNav } from 'components/AuthNav';
+import { Navigation } from 'components/Navigation';
+import { UserMenu } from 'components/UserMenu';
 import { useAuth } from 'hooks/useAuth';
 
 export const AppBar = () => {

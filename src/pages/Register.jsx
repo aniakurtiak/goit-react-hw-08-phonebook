@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react';
-import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+import { RegisterForm } from 'components/RegisterForm';
 import { Helmet } from 'react-helmet';
 import '../index.css';
 

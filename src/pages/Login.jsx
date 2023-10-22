@@ -1,4 +1,4 @@
-import { LoginForm } from 'components/LoginForm/LoginForm';
+import { LoginForm } from 'components/LoginForm';
 import { Helmet } from 'react-helmet';
 import '../index.css';
 import { Box } from '@chakra-ui/react';

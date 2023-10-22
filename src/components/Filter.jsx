@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-// import { FilterWrap, Input } from './Filter.styled';
 import { changeFiltervalue } from 'redux/fIlterSlice';
 import { selectFilter } from 'redux/selectors';
 import { Box, FormControl, FormLabel, Input } from '@chakra-ui/react';

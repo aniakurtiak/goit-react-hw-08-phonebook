@@ -1,11 +1,8 @@
-// 1. Import `extendTheme`
 import { extendTheme } from '@chakra-ui/react';
 
-// 2. Define the new text styles
 const theme = extendTheme({
   textStyles: {
     nav: {
-      // you can also use responsive styles
       fontSize: ['18px', '24px'],
       fontWeight: 'normal',
       lineHeight: '110%',
