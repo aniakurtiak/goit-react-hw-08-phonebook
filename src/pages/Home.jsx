@@ -10,8 +10,10 @@ export default function Home() {
       alignItems="center"
       justifyContent="center"
     >
-      <Container textAlign="center" ml={900}>
-        <Text fontSize={48}>Welcome to your personal Phonebook</Text>
+      <Container textAlign="center" ml={['200px', '300px', '500px', '600px']}>
+        <Text fontSize={['24px', '48px']}>
+          Welcome to your personal Phonebook
+        </Text>
       </Container>
     </Box>
   );

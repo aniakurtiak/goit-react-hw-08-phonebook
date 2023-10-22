@@ -33,59 +33,92 @@ export const RegisterForm = () => {
   };
 
   return (
-    <Box pl={60} pt={40}>
+    <Box
+      pt={['120px', '120px', '150px']}
+      pl={['20px', '30px', '140px', '200px']}
+    >
       <form onSubmit={handleSubmit} autoComplete="off">
         <FormControl>
-          <FormLabel color="rgb(74, 59, 4)">Username</FormLabel>
+          <FormLabel
+            color="rgb(74, 59, 4)"
+            fontSize={['16px', '18px', '20px', '24px']}
+          >
+            Username
+          </FormLabel>
           <Input
             type="text"
             name="name"
-            htmlSize={35}
             width="auto"
             variant="flushed"
             focusBorderColor="rgb(74, 59, 4)"
-            color="rgb(194, 152, 0)"
-            fontSize={18}
+            color="rgb(138, 60, 0)"
+            fontFamily="heading"
+            letterSpacing={3}
+            fontWeight={600}
+            fontSize={['16px', '18px', '20px', '24px']}
+            mb={5}
           />
         </FormControl>
         <FormControl>
-          <FormLabel color="rgb(74, 59, 4)">Email</FormLabel>
+          <FormLabel
+            color="rgb(74, 59, 4)"
+            fontSize={['16px', '18px', '20px', '24px']}
+          >
+            Email
+          </FormLabel>
           <Input
             type="email"
             name="email"
-            htmlSize={35}
             width="auto"
             variant="flushed"
             focusBorderColor="rgb(74, 59, 4)"
-            color="rgb(194, 152, 0)"
-            fontSize={18}
+            color="rgb(138, 60, 0)"
+            fontFamily="heading"
+            letterSpacing={3}
+            fontWeight={600}
+            fontSize={['16px', '18px', '20px', '24px']}
+            mb={5}
           />
         </FormControl>
         <FormControl>
-          <FormLabel color="rgb(74, 59, 4)">Password</FormLabel>
-          <InputGroup size="md" variant="flushed">
+          <FormLabel
+            color="rgb(74, 59, 4)"
+            fontSize={['16px', '18px', '20px', '24px']}
+          >
+            Password
+          </FormLabel>
+          <InputGroup size="sm" variant="flushed">
             <Input
               type={showPassword ? 'text' : 'password'}
               name="password"
-              htmlSize={29}
+              htmlSize={12}
               width="auto"
               focusBorderColor="rgb(74, 59, 4)"
-              color="rgb(194, 152, 0)"
-              fontSize={18}
+              color="rgb(138, 60, 0)"
+              fontFamily="heading"
+              letterSpacing={3}
+              fontWeight={600}
+              fontSize={['16px', '18px', '20px', '24px']}
+              mb={5}
             />
             <InputLeftAddon width="4.5rem">
               <Button
                 onClick={togglePasswordVisibility}
                 colorScheme="blackAlpha"
                 variant="ghost"
-                // color="rgb(194, 152, 0)"
+                fontSize={['14px', '16px', '18px', '20px']}
               >
                 {showPassword ? 'Hide' : 'Show'}
               </Button>
             </InputLeftAddon>
           </InputGroup>
         </FormControl>
-        <Button type="submit" colorScheme="blackAlpha" variant="outline">
+        <Button
+          type="submit"
+          colorScheme="blackAlpha"
+          variant="outline"
+          fontSize={['16px', '18px', '20px', '24px']}
+        >
           Register
         </Button>
       </form>

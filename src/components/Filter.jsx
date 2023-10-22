@@ -24,9 +24,11 @@ export const Filter = () => {
           width="auto"
           variant="flushed"
           focusBorderColor="rgb(74, 59, 4)"
-          color="rgb(194, 152, 0)"
+          color="rgb(138, 60, 0)"
           fontSize={18}
           fontFamily="heading"
+          letterSpacing={3}
+          fontWeight={500}
         />
       </FormControl>
     </Box>

@@ -15,4 +15,5 @@ const theme = extendTheme({
     heading: 'Lobster Two, sans-serif',
   },
 });
+
 export default theme;

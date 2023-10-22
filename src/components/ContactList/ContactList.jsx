@@ -1,9 +1,15 @@
-import { List } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { ItemsWrap } from 'components/ContactItem/ContactItem.styled';
 import { selectVisibleItems } from 'redux/selectors';
 import { deleteContact } from 'redux/contacts/operations';
-import { Box, Text } from '@chakra-ui/react';
+import {
+  Box,
+  IconButton,
+  List,
+  ListIcon,
+  ListItem,
+  Text,
+} from '@chakra-ui/react';
+import { BsPersonLinesFill, BsXLg } from 'react-icons/bs';
 
 export const ContactList = () => {
   const contacts = useSelector(selectVisibleItems);
@@ -17,14 +23,22 @@ export const ContactList = () => {
       <Text fontFamily="heading" fontSize={24} color="rgb(74, 59, 4)">
         Contacts
       </Text>
-      <List>
+      <List fontFamily="heading" letterSpacing={3}>
         {contacts.map(item => (
-          <li key={item.id}>
-            <ItemsWrap>
+          <ListItem key={item.id}>
+            <Box>
+              <ListIcon as={BsPersonLinesFill} color="rgb(74, 59, 4)" />
               {item.name}: {item.number}
-              <button onClick={() => onDelete(item.id)}>Delete</button>
-            </ItemsWrap>
-          </li>
+              <IconButton
+                onClick={() => onDelete(item.id)}
+                variant="ghost"
+                colorScheme="blackAlpha"
+                aria-label="Delete contact"
+                fontSize="18px"
+                icon={<BsXLg />}
+              />
+            </Box>
+          </ListItem>
         ))}
       </List>
     </Box>

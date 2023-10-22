@@ -1,4 +1,4 @@
-import { ErrorMessage, Form, Formik } from 'formik';
+import { ErrorMessage, Form, Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix';
@@ -59,29 +59,37 @@ export const ContactForm = () => {
           <Form>
             <FormControl>
               <FormLabel color="rgb(74, 59, 4)">Username</FormLabel>
-              <Input
+              <Field
+                as={Input}
                 type="text"
                 name="name"
                 htmlSize={35}
                 width="auto"
                 variant="flushed"
                 focusBorderColor="rgb(74, 59, 4)"
-                color="rgb(194, 152, 0)"
+                color="rgb(138, 60, 0)"
                 fontSize={18}
+                fontFamily="heading"
+                letterSpacing={3}
+                fontWeight={500}
               />
               <ErrorMessage name="name" component="div" />
             </FormControl>
             <FormControl>
               <FormLabel color="rgb(74, 59, 4)">Number</FormLabel>
-              <Input
+              <Field
+                as={Input}
                 type="tel"
                 name="number"
                 htmlSize={35}
                 width="auto"
                 variant="flushed"
                 focusBorderColor="rgb(74, 59, 4)"
-                color="rgb(194, 152, 0)"
+                color="rgb(138, 60, 0)"
                 fontSize={18}
+                fontFamily="heading"
+                letterSpacing={3}
+                fontWeight={500}
               />
               <ErrorMessage name="number" component="div" />
             </FormControl>

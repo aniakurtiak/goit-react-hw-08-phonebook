@@ -8,7 +8,12 @@ export const AppBar = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <Flex alignItems="center" bg="rgb(64, 51, 2)" p="4" mb="-5" pl={60} pr={60}>
+    <Flex
+      alignItems="center"
+      bg="rgb(64, 51, 2)"
+      p="4"
+      px={['20px', '40px', '100px']}
+    >
       <Box textStyle="nav" fontFamily="heading">
         <Navigation />
       </Box>

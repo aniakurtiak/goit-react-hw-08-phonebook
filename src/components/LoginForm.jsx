@@ -32,46 +32,72 @@ export const LoginForm = () => {
   };
 
   return (
-    <Box pl={860} pt={40}>
+    <Box
+      pt={['120px', '120px', '150px']}
+      pl={['220px', '300px', '400px', '600px']}
+      pr={10}
+    >
       <form onSubmit={handleSubmit} autoComplete="off">
         <FormControl>
-          <FormLabel color="rgb(74, 59, 4)">Email</FormLabel>
+          <FormLabel
+            color="rgb(74, 59, 4)"
+            fontSize={['16px', '18px', '20px', '24px']}
+          >
+            Email
+          </FormLabel>
           <Input
             type="email"
             name="email"
-            htmlSize={25}
             width="auto"
-            fontSize={18}
+            fontSize={['16px', '18px', '20px', '24px']}
+            mb={5}
             variant="flushed"
             focusBorderColor="rgb(74, 59, 4)"
-            color="rgb(194, 152, 0)"
+            color="rgb(138, 60, 0)"
+            fontFamily="heading"
+            letterSpacing={3}
+            fontWeight={600}
           />
         </FormControl>
         <FormControl>
-          <FormLabel color="rgb(74, 59, 4)">Password</FormLabel>
+          <FormLabel
+            color="rgb(74, 59, 4)"
+            fontSize={['16px', '18px', '20px', '24px']}
+          >
+            Password
+          </FormLabel>
           <InputGroup size="md" variant="flushed">
             <Input
               type={showPassword ? 'text' : 'password'}
               name="password"
-              htmlSize={19}
+              htmlSize={14}
               width="auto"
               focusBorderColor="rgb(74, 59, 4)"
-              color="rgb(194, 152, 0)"
-              fontSize={18}
+              color="rgb(138, 60, 0)"
+              fontFamily="heading"
+              letterSpacing={3}
+              fontWeight={600}
+              fontSize={['16px', '18px', '20px', '24px']}
+              mb={5}
             />
             <InputLeftAddon width="4.5rem">
               <Button
                 onClick={togglePasswordVisibility}
                 colorScheme="blackAlpha"
                 variant="ghost"
-                // color="rgb(194, 152, 0)"
+                fontSize={['14px', '16px', '18px', '20px']}
               >
                 {showPassword ? 'Hide' : 'Show'}
               </Button>
             </InputLeftAddon>
           </InputGroup>
         </FormControl>
-        <Button type="submit" colorScheme="blackAlpha" variant="outline">
+        <Button
+          type="submit"
+          colorScheme="blackAlpha"
+          variant="outline"
+          fontSize={['14px', '16px', '18px', '20px']}
+        >
           Log in
         </Button>
       </form>
